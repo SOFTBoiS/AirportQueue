@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AirportQueue
+namespace Mini_Project_2_Airport_Queuing_System
 {
     public class Plane
     {

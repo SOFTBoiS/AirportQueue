@@ -1,6 +1,6 @@
 using System;
 
-namespace AirportQueue
+namespace Mini_Project_2_Airport_Queuing_System
 {
     public class Time : IComparable<Time>
     {
@@ -19,8 +19,7 @@ namespace AirportQueue
 
         private static string Two(long number)
         {
-            if (number >= 10) return $"{number}";
-            return $"0{number}";
+            return number >= 10 ? $"{number}" : $"0{number}";
         }
 
         public int CompareTo(Time other)

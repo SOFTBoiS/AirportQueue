@@ -1,4 +1,4 @@
-namespace Sorting
+namespace Mini_Project_2_Airport_Queuing_System.Queues
 {
     public interface IQueue<T>
     {

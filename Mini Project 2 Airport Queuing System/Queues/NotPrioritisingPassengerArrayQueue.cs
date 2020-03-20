@@ -1,7 +1,6 @@
 using System;
-using AirportQueue;
 
-namespace Sorting
+namespace Mini_Project_2_Airport_Queuing_System.Queues
 {
     public class NotPrioritisingPassengerArrayQueue : IPriorityQueue<Passenger>
     {
@@ -37,7 +36,7 @@ namespace Sorting
         public Passenger Peek() {
             if (Size == 0)
                 throw new InvalidOperationException("Cannot peek into empty queue");
-            return items[Size];
+            return items[_head];
         }
 
         public bool IsEmpty()

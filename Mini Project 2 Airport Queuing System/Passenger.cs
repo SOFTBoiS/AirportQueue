@@ -1,26 +1,26 @@
 using System;
 
-namespace AirportQueue
+namespace Mini_Project_2_Airport_Queuing_System
 {
     public class Passenger : IComparable<Passenger>
     {
-        public  int ID { get; private set; }
-        public  Time ArrivalTime { get; private set;  }
-        public  Plane Plane { get; private set; }
-        public Category Category { get; private set; }
+        private int Id { get; }
+        private Time ArrivalTime { get; }
+        public  Plane Plane { get; }
+        public Category Category { get; }
         public Status Status = Status.Waiting;
 
         public Passenger(int id, Time arrivalTime, Category category, Plane plane)
         {
-            this.ID = id;
+            Id = id;
             ArrivalTime = arrivalTime;
-            this.Plane = plane;
+            Plane = plane;
             Category = category;
         }
 
         public override string ToString()
         {
-            return $"{ID}) arrived {ArrivalTime} as {Category} and is {Status}";
+            return $"{Id}) arrived {ArrivalTime} as {Category} and is {Status}";
         }
 
         public int CompareTo(Passenger other)

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Sorting;
+using Mini_Project_2_Airport_Queuing_System.Queues;
 
-namespace AirportQueue
+namespace Mini_Project_2_Airport_Queuing_System
 {
     public class PassengerProducer
     {
@@ -55,16 +55,16 @@ namespace AirportQueue
             {
                 category = Category.LateToFlight;
             }
-            else if (c < 10) category = Category.BusinessClass;
-            else if (c < 11) category = Category.Disabled;
-            else if (c < 15) category = Category.Family;
+            else if (c < 15) category = Category.BusinessClass;
+            else if (c < 20) category = Category.Disabled;
+            else if (c < 40) category = Category.Family;
             else category = Category.Monkey;
             
-            Passenger passenger = new Passenger(NextPassengerId++, now, category, plane);
+            var passenger = new Passenger(NextPassengerId++, now, category, plane);
             Console.WriteLine($"Passenger {passenger} added to queue");
             Queue.Enqueue(passenger);
 
-            ProcessingTicksLeft = Randomizer.Next(120);
+            ProcessingTicksLeft = Randomizer.Next(30);
 
         }
     }
